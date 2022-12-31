@@ -1,6 +1,4 @@
 # Name: Erin Morales
-# CSE 160
-# Homework 5
 
 import networkx as nx
 import matplotlib.pyplot as plt
