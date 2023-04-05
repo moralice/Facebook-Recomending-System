@@ -4,11 +4,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from operator import itemgetter
 
-
-###
-#  Problem 1a
-###
-
 def get_practice_graph():
     """Builds and returns the practice graph
     """
@@ -31,11 +26,6 @@ def draw_practice_graph(graph):
     """
     nx.draw_networkx(graph)
     plt.show()
-
-
-###
-#  Problem 1b
-###
 
 def get_romeo_and_juliet_graph():
     """Builds and returns the romeo and juliet graph
@@ -69,11 +59,6 @@ def draw_rj(graph):
     nx.draw_networkx(graph)
     plt.savefig("romeo-and-juliet.pdf")
     plt.show()
-
-
-###
-#  Problem 2
-###
 
 def friends(graph, user):
     """Returns a set of the friends of the given user, in the given graph.
@@ -228,11 +213,6 @@ def recommend_by_influence(graph, user):
     influ_map = influence_map(graph, user)
     return number_map_to_sorted_list(influ_map)
 
-
-###
-#  Problem 5
-###
-
 def get_facebook_graph():
     """
     Builds and returns the facebook graph
@@ -262,10 +242,6 @@ def main():
     # Otherwise, the picture will pop up every time that you run your program.
     # draw_rj(rj)
 
-    ###
-    #  Problem 4
-    ###
-
     print("Problem 4:")
     print()
 
@@ -283,18 +259,11 @@ def main():
     print('Unchanged Recommendations:', sorted(same_list))
     print('Changed Recommendations:', sorted(different_list))
 
-    ###
-    #  Problem 5
-    ###
-
     # (Your Problem 5 code goes here. Make sure to call get_facebook_graph.)
     facebook = get_facebook_graph()
     # assert len(facebook.nodes()) == 63731
     # assert len(facebook.edges()) == 817090
 
-    ###
-    #  Problem 6
-    ###
     print()
     print("Problem 6:")
     print()
@@ -306,9 +275,6 @@ def main():
                                                                   user)[0:10]
             print(user, '(by num_common_friends): ', fren_rec_list)
 
-    ###
-    #  Problem 7
-    ###
     print()
     print("Problem 7:")
     print()
@@ -319,9 +285,6 @@ def main():
             list_influ = recommend_by_influence(facebook, user)[0:10]
             print(user, '(by influence): ', list_influ)
 
-    ###
-    #  Problem 8
-    ###
     print()
     print("Problem 8:")
     print()
@@ -344,10 +307,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-###
-#  Collaboration
-###
-
-# Stacy Che
