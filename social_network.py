@@ -17,7 +17,6 @@ def get_practice_graph():
     practice_graph.add_edge("D", "F")
     practice_graph.add_edge("D", "E")
     practice_graph.add_edge("F", "C")
-    # (Your code for Problem 1a goes here.)
     return practice_graph
 
 
@@ -63,8 +62,6 @@ def draw_rj(graph):
 def friends(graph, user):
     """Returns a set of the friends of the given user, in the given graph.
     """
-    # This function has already been implemented for you.
-    # You do not need to add any more code to this (short!) function.
     return set(graph.neighbors(user))
 
 
@@ -84,7 +81,6 @@ def friends_of_friends(graph, user):
     for next_friend in mutual_friends:
         next_next_friends = friends(graph, next_friend)
         result = result | next_next_friends
-    # remove the first friend if they show up again
     result.remove(user)
     result = result - mutual_friends
     return result
@@ -175,11 +171,6 @@ def recommend_by_number_of_common_friends(graph, user):
     return fren_sort_lst
 
 
-###
-#  Problem 3
-###
-
-
 def influence_map(graph, user):
     """
     Returns a map (a dictionary) mapping from each person to their
@@ -217,7 +208,6 @@ def get_facebook_graph():
     """
     Builds and returns the facebook graph
     """
-    # (Your Problem 5 code goes here.)
     my_file = open('facebook-links-small.txt')
     facebook = nx.Graph()
     for txt in my_file:
@@ -230,17 +220,8 @@ def get_facebook_graph():
 
 
 def main():
-    # practice_graph = get_practice_graph()
-    # Comment out this line after you have visually verified your practice
-    # graph.
-    # Otherwise, the picture will pop up every time that you run your program.
-    # draw_practice_graph(practice_graph)
 
     rj = get_romeo_and_juliet_graph()
-    # Comment out this line after you have visually verified your rj graph and
-    # created your PDF file.
-    # Otherwise, the picture will pop up every time that you run your program.
-    # draw_rj(rj)
 
     print("Problem 4:")
     print()
@@ -259,7 +240,6 @@ def main():
     print('Unchanged Recommendations:', sorted(same_list))
     print('Changed Recommendations:', sorted(different_list))
 
-    # (Your Problem 5 code goes here. Make sure to call get_facebook_graph.)
     facebook = get_facebook_graph()
     # assert len(facebook.nodes()) == 63731
     # assert len(facebook.edges()) == 817090
@@ -279,7 +259,6 @@ def main():
     print("Problem 7:")
     print()
 
-    # (Your Problem 7 code goes here.)
     for user in sorted_fb_profile:
         if user % 1000 == 0:
             list_influ = recommend_by_influence(facebook, user)[0:10]
@@ -289,7 +268,6 @@ def main():
     print("Problem 8:")
     print()
 
-    # (Your Problem 8 code goes here.)
     same_num = 0
     different_num = 0
     for user in sorted_fb_profile:
