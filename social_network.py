@@ -30,7 +30,6 @@ def get_romeo_and_juliet_graph():
     """Builds and returns the romeo and juliet graph
     """
     rj = nx.Graph()
-    # (Your code for Problem 1b goes here.)
     rj.add_edge("Nurse", "Juliet")
     rj.add_edge("Juliet", "Tybalt")
     rj.add_edge("Juliet", "Friar Laurence")
